@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Simuladors interactius – L'Arrel Acadèmia</title>
+  <style>
+    :root {
+      --bg: #0b1226;
+      --panel: #0e1530;
+      --accent: #60a5fa;
+      --accent2: #34d399;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --danger: #f97373;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #111827 0, #020617 40%);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      padding: 16px;
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 16px;
+      padding: 20px 24px 24px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    /* Logo */
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .logo-wrap img {
+      max-width: 180px;
+      width: 100%;
+      height: auto;
+      display: block;
+      opacity: 0.95;
+      transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+    }
+    .logo-wrap img:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h1 span.badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, var(--accent2), var(--accent));
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #0b1120;
+    }
+    .subtitle {
+      margin: 0 0 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.18);
+      color: #6ee7b7;
+      margin-bottom: 10px;
+    }
+
+    .sim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .sim-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.1s ease-out, box-shadow 0.15s ease-out, border 0.15s ease-out, background 0.15s;
+    }
+    .sim-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.55);
+      border-color: var(--accent);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .sim-title {
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sim-title span.icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      background: radial-gradient(circle at 30% 30%, var(--accent), #3b82f6);
+      color: #0b1120;
+      font-weight: 700;
+    }
+
+    .sim-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .sim-meta {
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.76rem;
+    }
+    .tag {
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.18);
+      color: var(--muted);
+    }
+
+    .sim-cta {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent2);
+      font-weight: 500;
+    }
+    .sim-cta span.arrow {
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      padding-top: 10px;
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-wrap">
+      <a href="https://www.larrelacademia.cat/" target="_blank" rel="noopener noreferrer">
+        <img
+          src="https://i.ibb.co/Q7YJTwgn/PRINCIPAL-BEIGE.png"
+          alt="L'Arrel Acadèmia - Logo"
+        />
+      </a>
+    </div>
+
+    <h1>
+      <span class="badge">Σ</span>
+      Simuladors interactius de matemàtiques i física
+    </h1>
+    <p class="subtitle">
+      Tria un simulador per explorar visualment conceptes de matemàtiques i física.
+    </p>
+
+    <div class="pill">
+      🧮 Llista de simuladors disponibles
+    </div>
+
+    <div class="sim-grid">
+      <!-- Ruffini -->
+      <a class="sim-card" href="https://larrelacademia.github.io/ruffini/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">R</span>
+          Regla de Ruffini
+        </div>
+        <div class="sim-desc">
+          Divideix polinomis de forma visual amb la taula de Ruffini, obtenint el quocient i el residu pas a pas.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Àlgebra</span>
+          <span class="tag">Polinomis</span>
+          <span class="tag">ESO · Batx</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
+
+      <!-- Tir parabòlic -->
+      <a class="sim-card" href="https://larrelacademia.github.io/tir.parabolic/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">T</span>
+          Simulador de tir parabòlic
+        </div>
+        <div class="sim-desc">
+          Ajusta la velocitat inicial, l’angle i l’alçada per veure la trajectòria, els vectors de velocitat i les magnituds instantànies.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Física</span>
+          <span class="tag">Cinemàtica</span>
+          <span class="tag">Batxillerat</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
+
+      <!-- Equació 2n grau -->
+      <a class="sim-card" href="https://larrelacademia.github.io/eq.2n.grau/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">2</span>
+          Equació de segon grau
+        </div>
+        <div class="sim-desc">
+          Introdueix els coeficients i observa el tipus de solucions, les arrels i la paràbola al gràfic.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Equacions</span>
+          <span class="tag">Funcions</span>
+          <span class="tag">ESO · Batx</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
+
+      <!-- Sistemes d'equacions -->
+      <a class="sim-card" href="https://larrelacademia.github.io/sistemes.eq/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">S</span>
+          Sistemes d’equacions
+        </div>
+        <div class="sim-desc">
+          Resol sistemes de dues equacions, identifica el tipus de solució i observa el tall de les rectes al gràfic.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Àlgebra</span>
+          <span class="tag">Geometria analítica</span>
+          <span class="tag">ESO · Batx</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer">
+      <span>© <span id="year"></span> L'Arrel Acadèmia · Simuladors educatius</span>
+    </div>
+  </div>
+
+  <script>
+    // Any automàtic al peu de pàgina
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
