@@ -2,50 +2,64 @@
 <html lang="ca">
 <head>
   <meta charset="UTF-8">
-  <title>Simuladors interactius – L'Arrel Acadèmia</title>
+  <title>Simuladors interactius - L'Arrel Acadèmia</title>
   <!-- Fa que la pàgina sigui realment responsive al mòbil -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tipografies de marca: Paytone One + Urbanist -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Urbanist:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #0b1226;
-      --panel: #0e1530;
-      --accent: #60a5fa;
-      --accent2: #34d399;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --danger: #f97373;
-      --border: #334155;
+      /* Paleta inspirada en el manual de marca */
+      --lima:   #d5f476;  /* Verd lima - tocs suaus / destacats */
+      --blanc:  #f9f8ef;  /* Blanc cru - targetes / fons */
+      --fucsia: #ff3d78;  /* Fúcsia - accent principal */
+      --jade:   #00a874;  /* Verd jade - accent secundari */
+      --lila:   #d5bef7;  /* Lila clar – degradat de fons */
+      --border: #5c3a93;  /* Morat per a contorns */
+      --text:   #000000;  /* Text principal negre */
+      --text2:  #374151;  /* Text secundari gris fosc */
+      --muted:  #6b7280;  /* Text més suau */
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at top, #111827 0, #020617 40%);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      color: var(--text);
       padding: 16px;
-    }
-    .card {
-      background: rgba(15, 23, 42, 0.95);
-      border-radius: 16px;
-      padding: 20px 24px 24px;
-      max-width: 1000px;
-      width: 100%;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.5);
-      border: 1px solid rgba(148, 163, 184, 0.25);
+      font-family: "Urbanist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #ffaac9 0, var(--lima) 35%, var(--lila) 70%, #5c3a93 100%);
     }
 
-    /* Logo */
+    .card {
+      background: var(--blanc);
+      border-radius: 20px;
+      padding: 22px 24px 22px;
+      max-width: 1100px;
+      width: 100%;
+      box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.18),
+        0 0 0 2px rgba(0, 0, 0, 0.05);
+      border: 2px solid var(--border);
+    }
+
+    /* Logo principal */
     .logo-wrap {
       display: flex;
       justify-content: center;
-      margin-bottom: 12px;
+      margin-bottom: 18px;
     }
     .logo-wrap img {
-      max-width: 180px;
+      max-width: 220px;
       width: 100%;
       height: auto;
       display: block;
@@ -59,27 +73,33 @@
 
     h1 {
       margin: 0 0 8px;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      font-family: "Paytone One", system-ui, sans-serif;
+      letter-spacing: 0.02em;
+      color: var(--text);
     }
     h1 span.badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, var(--accent2), var(--accent));
+      background: var(--jade);
+      color: #ffffff;
       font-weight: 700;
-      font-size: 0.9rem;
-      color: #0b1120;
+      font-size: 1rem;
+      box-shadow: 0 0 0 2px #ffffff;
     }
+
     .subtitle {
       margin: 0 0 16px;
-      font-size: 0.9rem;
-      color: var(--muted);
+      font-size: 0.95rem;
+      color: var(--text2);
+      line-height: 1.5;
     }
 
     .pill {
@@ -87,16 +107,19 @@
       align-items: center;
       gap: 6px;
       font-size: 0.78rem;
-      padding: 4px 9px;
+      padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(15, 118, 110, 0.18);
-      color: #6ee7b7;
+      background: #00a8741a;
+      color: var(--jade);
       margin-bottom: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     .sim-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 16px;
       margin-top: 8px;
     }
@@ -106,18 +129,23 @@
       flex-direction: column;
       gap: 6px;
       padding: 14px 16px;
-      border-radius: 12px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1.5px solid rgba(0, 0, 0, 0.06);
       text-decoration: none;
       color: inherit;
-      transition: transform 0.1s ease-out, box-shadow 0.15s ease-out, border 0.15s ease-out, background 0.15s;
+      transition:
+        transform 0.1s ease-out,
+        box-shadow 0.15s ease-out,
+        border 0.15s ease-out,
+        background 0.15s ease-out;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
     }
     .sim-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.55);
-      border-color: var(--accent);
-      background: rgba(15, 23, 42, 0.98);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+      border-color: var(--fucsia);
+      background: #fff7fb;
     }
 
     .sim-title {
@@ -126,6 +154,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      color: var(--text);
     }
     .sim-title span.icon {
       width: 26px;
@@ -135,14 +164,15 @@
       align-items: center;
       justify-content: center;
       font-size: 0.9rem;
-      background: radial-gradient(circle at 30% 30%, var(--accent), #3b82f6);
-      color: #0b1120;
+      background: linear-gradient(135deg, var(--fucsia), #ff7ca5);
+      color: #ffffff;
       font-weight: 700;
+      box-shadow: 0 0 0 2px #ffffff;
     }
 
     .sim-desc {
       font-size: 0.85rem;
-      color: var(--muted);
+      color: var(--text2);
     }
 
     .sim-meta {
@@ -155,8 +185,9 @@
     .tag {
       padding: 2px 7px;
       border-radius: 999px;
-      background: rgba(148, 163, 184, 0.18);
+      background: #f3f4f6;
       color: var(--muted);
+      border: 1px solid rgba(148, 163, 184, 0.35);
     }
 
     .sim-cta {
@@ -165,8 +196,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: var(--accent2);
-      font-weight: 500;
+      color: var(--fucsia);
+      font-weight: 600;
     }
     .sim-cta span.arrow {
       font-size: 0.9rem;
@@ -180,26 +211,45 @@
       justify-content: space-between;
       gap: 8px;
       flex-wrap: wrap;
-      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
       padding-top: 10px;
+      min-height: 14px;
     }
 
-    /* Ajustos per a mòbil */
+    .logo-footer {
+      margin-top: 2px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 11px;
+    }
+    .logo-footer img {
+      max-width: 58px;
+      width: 100%;
+      height: auto;
+      display: block;
+      opacity: 0.9;
+      transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+    }
+    .logo-footer img:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
     @media (max-width: 700px) {
       body {
         align-items: flex-start;
         padding: 12px;
       }
       .card {
-        padding: 16px 14px 18px;
-        border-radius: 12px;
+        padding: 18px 14px 18px;
+        border-radius: 16px;
       }
       h1 {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
         flex-wrap: wrap;
       }
       .subtitle {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
       }
       .sim-grid {
         grid-template-columns: 1fr;
@@ -226,7 +276,7 @@
     <div class="logo-wrap">
       <a href="https://www.larrelacademia.cat/" target="_blank" rel="noopener noreferrer">
         <img
-          src="https://i.ibb.co/Q7YJTwgn/PRINCIPAL-BEIGE.png"
+          src="https://i.ibb.co/TDpf3BHr/PRINCIPAL-FUCSIA.png"
           alt="L'Arrel Acadèmia - Logo"
         />
       </a>
@@ -268,7 +318,7 @@
       <a class="sim-card" href="https://larrelacademia.github.io/tir.parabolic/" target="_blank" rel="noopener noreferrer">
         <div class="sim-title">
           <span class="icon">T</span>
-          Simulador de tir parabòlic
+          Tir parabòlic
         </div>
         <div class="sim-desc">
           Ajusta la velocitat inicial, l’angle i l’alçada per veure la trajectòria, els vectors de velocitat i les magnituds instantànies.
@@ -320,35 +370,46 @@
           Obrir simulador <span class="arrow">↗</span>
         </div>
       </a>
-        <!-- Esfera goniomètrica -->
-  <a class="sim-card" href="https://larrelacademia.github.io/esfera.goniometrica/" target="_blank" rel="noopener noreferrer">
-    <div class="sim-title">
-      <span class="icon">α</span>
-      Esfera goniomètrica sin(α) i cos(α)
-    </div>
-    <div class="sim-desc">
-      Visualitza la relació entre l’angle, el sinus i el cosinus mitjançant una esfera goniomètrica interactiva.
-    </div>
-    <div class="sim-meta">
-      <span class="tag">Trigonometria</span>
-      <span class="tag">Angles</span>
-      <span class="tag">ESO · Batx</span>
-    </div>
-    <div class="sim-cta">
-      Obrir simulador <span class="arrow">↗</span>
-    </div>
-  </a>
-      
+
+      <!-- Esfera goniomètrica -->
+      <a class="sim-card" href="https://larrelacademia.github.io/esfera.goniometrica/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">α</span>
+          sin(α) i cos(α)
+        </div>
+        <div class="sim-desc">
+          Visualitza la relació entre l’angle, el sinus i el cosinus mitjançant una esfera goniomètrica interactiva.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Trigonometria</span>
+          <span class="tag">Angles</span>
+          <span class="tag">ESO · Batx</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
     </div>
 
-    <div class="footer">
-      <span>© <span id="year"></span> L'Arrel Acadèmia · Simuladors educatius</span>
+    <!-- Footer amb la línia intacta, però sense text -->
+    <div class="footer"></div>
+
+    <!-- Imagotip final -->
+    <div class="logo-footer">
+      <a href="https://www.larrelacademia.cat/" target="_blank" rel="noopener noreferrer">
+        <img src="https://i.ibb.co/PvJdJ31H/IMAGOTIP-FUCSIA.png" alt="L'Arrel Acadèmia - Imagotip">
+      </a>
     </div>
+
+    <!-- Text legal sota de l’imagotip -->
+    <div style="text-align:center; margin-top:6px; font-size:0.75rem; color:var(--muted);">
+      © <span id="year2"></span> L'Arrel Acadèmia · Simuladors educatius
+    </div>
+
   </div>
 
   <script>
-    // Any automàtic al peu de pàgina
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year2').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
