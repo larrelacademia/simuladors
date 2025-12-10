@@ -122,7 +122,7 @@
 
     .sim-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
       gap: 16px;
       margin-top: 8px;
     }
@@ -286,139 +286,143 @@
     </div>
 
     <h1>
-     
-    Simuladors interactius de matemàtiques i física
+      Simuladors interactius de matemàtiques i física
     </h1>
     <p class="subtitle">
       Tria un simulador per explorar visualment conceptes de matemàtiques i física.
     </p>
 
+    <!-- 🧮 Bloc MATEMÀTIQUES -->
     <div class="pill">
-      🧮 Llista de simuladors disponibles
+      🧮 Simuladors de matemàtiques
     </div>
 
-   <div class="sim-grid">
+    <div class="sim-grid">
 
-  <!-- 🧮 MATEMÀTIQUES -->
+      <!-- Ruffini -->
+      <a class="sim-card" href="https://larrelacademia.github.io/ruffini/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">R</span>
+          Ruffini
+        </div>
+        <div class="sim-desc">
+          Divideix polinomis de forma visual amb la taula de Ruffini, obtenint el quocient i el residu pas a pas.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Àlgebra</span>
+          <span class="tag">Polinomis</span>
+          <span class="tag">ESO · Batx</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
 
-  <!-- Ruffini -->
-  <a class="sim-card" href="https://larrelacademia.github.io/ruffini/" target="_blank" rel="noopener noreferrer">
-    <div class="sim-title">
-      <span class="icon">R</span>
-      Ruffini
-    </div>
-    <div class="sim-desc">
-      Divideix polinomis de forma visual amb la taula de Ruffini, obtenint el quocient i el residu pas a pas.
-    </div>
-    <div class="sim-meta">
-      <span class="tag">Àlgebra</span>
-      <span class="tag">Polinomis</span>
-      <span class="tag">ESO · Batx</span>
-    </div>
-    <div class="sim-cta">
-      Obrir simulador <span class="arrow">↗</span>
-    </div>
-  </a>
+      <!-- Equació 2n grau -->
+      <a class="sim-card" href="https://larrelacademia.github.io/eq.2n.grau/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">2°</span>
+          Equació de segon grau
+        </div>
+        <div class="sim-desc">
+          Introdueix els coeficients i observa el tipus de solucions, les arrels i la paràbola al gràfic.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Equacions</span>
+          <span class="tag">Funcions</span>
+          <span class="tag">ESO · Batx</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
 
-  <!-- Equació 2n grau -->
-  <a class="sim-card" href="https://larrelacademia.github.io/eq.2n.grau/" target="_blank" rel="noopener noreferrer">
-    <div class="sim-title">
-      <span class="icon">2°</span>
-      Equació de segon grau
-    </div>
-    <div class="sim-desc">
-      Introdueix els coeficients i observa el tipus de solucions, les arrels i la paràbola al gràfic.
-    </div>
-    <div class="sim-meta">
-      <span class="tag">Equacions</span>
-      <span class="tag">Funcions</span>
-      <span class="tag">ESO · Batx</span>
-    </div>
-    <div class="sim-cta">
-      Obrir simulador <span class="arrow">↗</span>
-    </div>
-  </a>
+      <!-- Sistemes d'equacions -->
+      <a class="sim-card" href="https://larrelacademia.github.io/sistemes.eq/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">S</span>
+          Sistemes d’equacions
+        </div>
+        <div class="sim-desc">
+          Resol sistemes de dues equacions, identifica el tipus de solució i observa el tall de les rectes al gràfic.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Àlgebra</span>
+          <span class="tag">Geometria analítica</span>
+          <span class="tag">ESO · Batx</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
 
-  <!-- Sistemes d'equacions -->
-  <a class="sim-card" href="https://larrelacademia.github.io/sistemes.eq/" target="_blank" rel="noopener noreferrer">
-    <div class="sim-title">
-      <span class="icon">S</span>
-      Sistemes d’equacions
-    </div>
-    <div class="sim-desc">
-      Resol sistemes de dues equacions, identifica el tipus de solució i observa el tall de les rectes al gràfic.
-    </div>
-    <div class="sim-meta">
-      <span class="tag">Àlgebra</span>
-      <span class="tag">Geometria analítica</span>
-      <span class="tag">ESO · Batx</span>
-    </div>
-    <div class="sim-cta">
-      Obrir simulador <span class="arrow">↗</span>
-    </div>
-  </a>
+      <!-- Esfera goniomètrica -->
+      <a class="sim-card" href="https://larrelacademia.github.io/esfera.goniometrica/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">α</span>
+          sin(α) i cos(α)
+        </div>
+        <div class="sim-desc">
+          Visualitza la relació entre l’angle, el sinus i el cosinus mitjançant una esfera goniomètrica interactiva.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Trigonometria</span>
+          <span class="tag">Angles</span>
+          <span class="tag">ESO · Batx</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
 
-  <!-- Esfera goniomètrica -->
-  <a class="sim-card" href="https://larrelacademia.github.io/esfera.goniometrica/" target="_blank" rel="noopener noreferrer">
-    <div class="sim-title">
-      <span class="icon">α</span>
-      sin(α) i cos(α)
     </div>
-    <div class="sim-desc">
-      Visualitza la relació entre l’angle, el sinus i el cosinus mitjançant una esfera goniomètrica interactiva.
-    </div>
-    <div class="sim-meta">
-      <span class="tag">Trigonometria</span>
-      <span class="tag">Angles</span>
-      <span class="tag">ESO · Batx</span>
-    </div>
-    <div class="sim-cta">
-      Obrir simulador <span class="arrow">↗</span>
-    </div>
-  </a>
 
-  <!-- 🔥 FÍSICA -->
+    <!-- 🔥 Bloc FÍSICA -->
+    <div class="pill" style="margin-top:18px;">
+      🔥 Simuladors de física
+    </div>
 
-  <!-- Tir parabòlic -->
-  <a class="sim-card" href="https://larrelacademia.github.io/tir.parabolic/" target="_blank" rel="noopener noreferrer">
-    <div class="sim-title">
-      <span class="icon">T</span>
-      Tir parabòlic
-    </div>
-    <div class="sim-desc">
-      Ajusta la velocitat inicial, l’angle i l’alçada per veure la trajectòria, els vectors de velocitat i les magnituds instantànies.
-    </div>
-    <div class="sim-meta">
-      <span class="tag">Física</span>
-      <span class="tag">Cinemàtica</span>
-      <span class="tag">Batxillerat</span>
-    </div>
-    <div class="sim-cta">
-      Obrir simulador <span class="arrow">↗</span>
-    </div>
-  </a>
+    <div class="sim-grid">
 
-  <!-- MRU & MRUA -->
-  <a class="sim-card" href="https://larrelacademia.github.io/mru.mrua/" target="_blank" rel="noopener noreferrer">
-    <div class="sim-title">
-      <span class="icon">M</span>
-      MRU i MRUA
-    </div>
-    <div class="sim-desc">
-      Explora la posició, velocitat i acceleració amb tres gràfics simultanis i equacions actualitzades en temps real.
-    </div>
-    <div class="sim-meta">
-      <span class="tag">Física</span>
-      <span class="tag">Cinemàtica</span>
-      <span class="tag">ESO · Batx</span>
-    </div>
-    <div class="sim-cta">
-      Obrir simulador <span class="arrow">↗</span>
-    </div>
-  </a>
+      <!-- Tir parabòlic -->
+      <a class="sim-card" href="https://larrelacademia.github.io/tir.parabolic/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">T</span>
+          Tir parabòlic
+        </div>
+        <div class="sim-desc">
+          Ajusta la velocitat inicial, l’angle i l’alçada per veure la trajectòria, els vectors de velocitat i les magnituds instantànies.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Física</span>
+          <span class="tag">Cinemàtica</span>
+          <span class="tag">Batxillerat</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
 
-</div>
+      <!-- MRU & MRUA -->
+      <a class="sim-card" href="https://larrelacademia.github.io/mru.mrua/" target="_blank" rel="noopener noreferrer">
+        <div class="sim-title">
+          <span class="icon">M</span>
+          MRU i MRUA
+        </div>
+        <div class="sim-desc">
+          Explora la posició, velocitat i acceleració amb tres gràfics simultanis i equacions actualitzades en temps real.
+        </div>
+        <div class="sim-meta">
+          <span class="tag">Física</span>
+          <span class="tag">Cinemàtica</span>
+          <span class="tag">ESO · Batx</span>
+        </div>
+        <div class="sim-cta">
+          Obrir simulador <span class="arrow">↗</span>
+        </div>
+      </a>
 
+    </div>
 
     <!-- Footer amb la línia intacta, però sense text -->
     <div class="footer"></div>
